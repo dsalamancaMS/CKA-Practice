@@ -1,0 +1,15 @@
+apiVersion: batch/v1
+kind: Job
+metadata:
+  name: pi
+spec:
+  template:
+    spec:
+      containers:
+      -  name: busybox
+         image: busybox
+         args:
+         - 'sleep'
+         - '30'
+      restartPolicy: Never
+  backoffLimit: 2
