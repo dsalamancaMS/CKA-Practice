@@ -1,0 +1,24 @@
+apiVersion: apps/v1
+kind: DaemonSet
+metadata:
+  name: my-demon
+  labels:
+    my-demon: alpinedemon
+spec:
+  selector:
+    matchLabels:
+      name: cutulhu
+  template:
+    metadata:
+      labels:
+        name: cutulhu
+    spec:
+      tolerations:
+      - key: node-role.kubernetes.io/master
+        effect: NoSchedule
+      containers:
+      - name: alpine-container
+        image: alpine
+        command:
+        - 'sleep'
+        - '10000000'

@@ -1,0 +1,15 @@
+kind: Pod
+apiVersion: v1
+metadata:
+  name: alpine
+  labels:
+    running: afterLabel
+spec:
+  containers:
+  - name: alpine
+    image: alpine
+    command:
+    - 'sleep'
+    - '60'
+  restartPolicy: Always
+
