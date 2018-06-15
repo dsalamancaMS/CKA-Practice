@@ -1,0 +1,26 @@
+apiVersion: batch/v1
+kind: Job
+metadata:
+  name: busy-variables
+  labels:
+    busy: variables
+spec:
+  template:
+    metadata:
+      name: busy-variables
+      labels:
+        busy: variables
+    spec:
+      containers:
+      - name: envprint
+        image: busybox
+        command:
+        - 'echo'
+        - '$(SCHOOL)'
+        env:
+        - name: STUDENT_NAME
+          value: "Denis"
+        - name: SCHOOL
+          value: "Linux Academy"
+      restartPolicy: Never
+  backoffLimit: 2
