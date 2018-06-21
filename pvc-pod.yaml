@@ -1,0 +1,15 @@
+kind: Pod
+apiVersion: v1
+metadata:
+  name: my-pvc-pod
+spec:
+  containers:
+    - name: myfrontend
+      image: nginx
+      volumeMounts:
+      - mountPath: "/var/www/azuredisk/html"
+        name: my-azure-volume
+  volumes:
+    - name: my-azure-volume
+      persistentVolumeClaim:
+        claimName: azure-managed-disk
