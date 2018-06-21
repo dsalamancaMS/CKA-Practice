@@ -7,6 +7,10 @@ spec:
   selector:
     dns: test
   clusterIP: None
+  ports:
+  -  name: http
+     port: 80
+     targetPort: 80
 
 ---
 ## deployment 
@@ -26,7 +30,6 @@ spec:
       labels:
         dns: test
     spec:
-      hostname: hello-dns
       subdomain: headless-service
       containers:
       - name: nginx
