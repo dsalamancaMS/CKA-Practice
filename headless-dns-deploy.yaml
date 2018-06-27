@@ -30,6 +30,7 @@ spec:
       labels:
         dns: test
     spec:
+      hostname: hello-dns
       subdomain: headless-service
       containers:
       - name: nginx
