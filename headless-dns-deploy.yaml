@@ -21,7 +21,7 @@ metadata:
   labels:
     dns: test
 spec:
-  replicas: 3
+  replicas: 1
   selector:
     matchLabels:
       dns: test
@@ -30,6 +30,7 @@ spec:
       labels:
         dns: test
     spec:
+      hostname: hello-dns
       subdomain: headless-service
       containers:
       - name: nginx
