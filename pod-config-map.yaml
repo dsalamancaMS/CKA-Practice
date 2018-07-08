@@ -13,7 +13,7 @@ spec:
   volumes:
     - name: config-volume
       configMap:
-        name: My-Conf-Map
+        name: my-conf-map
         items:
         - key: disk.type
           path: stuff
