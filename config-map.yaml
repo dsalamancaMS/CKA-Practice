@@ -1,0 +1,7 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: My-Conf-Map
+data:
+  how.much: very
+  disk.type: ssd

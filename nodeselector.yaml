@@ -1,0 +1,16 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: nslook3
+  labels:
+    env: test
+spec:
+  containers:
+  - name: busybox
+    image: busybox
+    imagePullPolicy: IfNotPresent
+    args:
+      - 'sleep'
+      - '100000'
+  nodeSelector:
+    color: blue
