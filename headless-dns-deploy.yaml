@@ -2,7 +2,7 @@
 apiVersion: v1
 kind: Service
 metadata:
-  name: headless-service
+  name: my-headless-service
 spec:
   selector:
     dns: test
@@ -31,7 +31,7 @@ spec:
         dns: test
     spec:
       hostname: hello-dns
-      subdomain: headless-service
+      subdomain: my-headless-service
       containers:
       - name: nginx
         image: nginx:latest
